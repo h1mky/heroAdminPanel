@@ -1,29 +1,48 @@
 {
-    "heroes": [
-        {
-            "id": 1,
-            "name": "Первый герой",
-            "description": "Первый герой в рейтинге!",
-            "element": "fire"
-        },
-        {
-            "id": 2,
-            "name": "Неизвестный герой",
-            "description": "Скрывающийся в тени",
-            "element": "wind"
-        },
-        {
-            "id": 3,
-            "name": "Морской герой",
-            "description": "Как аквамен, но не из DC",
-            "element": "water"
-        }
-    ],
-    "filters": [
-        "all",
-        "fire",
-        "water",
-        "wind",
-        "earth"
-    ]
+  "heroes": [
+    {
+      "id": "5a0ecc49-4de8-4938-a267-b4be78125d7e",
+      "name": "siega golovach",
+      "description": "sosat` u gabena",
+      "element": "fire"
+    },
+    {
+      "id": "3d818993-167a-4789-9c1b-9f5ae934f980",
+      "name": "siega",
+      "description": "special agent golovach",
+      "element": "wind"
+    }
+  ],
+  "filters": [
+    {
+      "name": "all",
+      "label": "Все",
+      "className": "btn-outline-dark",
+      "id": "c865"
+    },
+    {
+      "name": "fire",
+      "label": "Огонь",
+      "className": "btn-danger",
+      "id": "8f64"
+    },
+    {
+      "name": "water",
+      "label": "Вода",
+      "className": "btn-primary",
+      "id": "d21f"
+    },
+    {
+      "name": "wind",
+      "label": "Ветер",
+      "className": "btn-success",
+      "id": "ce46"
+    },
+    {
+      "name": "earth",
+      "label": "Земля",
+      "className": "btn-secondary",
+      "id": "062c"
+    }
+  ]
 }
