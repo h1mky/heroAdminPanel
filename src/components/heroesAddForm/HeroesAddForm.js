@@ -21,15 +21,15 @@ const HeroesAddForm = () => {
   const [heroDescr, setHeroDescr] = useState("");
   const [heroElement, setHeroElement] = useState("");
 
-  const { filters, filtersLoadingStatus } = useSelector((state) => state);
+  const { filters, filtersLoadingStatus } = useSelector(
+    (state) => state.filters
+  );
   const dispatch = useDispatch();
   const { request } = useHttp();
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    // Можно сделать и одинаковые названия состояний,
-    // хотел показать вам чуть нагляднее
-    // Генерация id через библиотеку
+
     const newHero = {
       id: uuidv4(),
       name: heroName,
@@ -37,8 +37,6 @@ const HeroesAddForm = () => {
       element: heroElement,
     };
 
-    // Отправляем данные на сервер в формате JSON
-    // ТОЛЬКО если запрос успешен - отправляем персонажа в store
     request("http://localhost:3001/heroes", "POST", JSON.stringify(newHero))
       .then((res) => console.log(res, "Отправка успешна"))
       .then(dispatch(heroCreated(newHero)))

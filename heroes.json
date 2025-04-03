@@ -11,6 +11,12 @@
       "name": "siega",
       "description": "special agent golovach",
       "element": "wind"
+    },
+    {
+      "id": "89f99aa6-da11-4734-809c-3950db9ad41d",
+      "name": "emoslut",
+      "description": "ebashit`",
+      "element": "fire"
     }
   ],
   "filters": [
