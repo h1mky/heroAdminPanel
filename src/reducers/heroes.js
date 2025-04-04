@@ -26,7 +26,7 @@ const heroes = (state = initialState, action) => {
     case "HERO_CREATED":
       return {
         ...state,
-        heroes: [state.heroes, action.payload],
+        heroes: [...state.heroes, action.payload],
       };
     case "HERO_DELETED":
       return {
