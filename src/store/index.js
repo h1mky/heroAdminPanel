@@ -1,7 +1,6 @@
-import { createStore, combineReducers, compose, applyMiddleware } from "redux";
-import { thunk } from "redux-thunk";
-import heroes from "../reducers/heroes";
-import filters from "../reducers/filter";
+import heroes from "../components/heroesList/heroesSlice";
+import filters from "../components/heroesFilters/filtersSlice";
+import { configureStore } from "@reduxjs/toolkit";
 
 const stringMiddleware = (store) => (dispatch) => (action) => {
   if (typeof action === "string") {
@@ -28,11 +27,12 @@ const stringMiddleware = (store) => (dispatch) => (action) => {
 //     };
 //     return store;
 //   };
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(
-  combineReducers({ heroes, filters }),
-  composeEnhancers(applyMiddleware(thunk, stringMiddleware))
-);
+const store = configureStore({
+  reducer: { heroes, filters },
+  devTools: process.env.NODE_ENV !== "production",
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(stringMiddleware),
+});
 
 export default store;

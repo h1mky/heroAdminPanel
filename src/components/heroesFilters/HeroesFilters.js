@@ -4,11 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import classNames from "classnames";
 
 import {
-  filtersFetching,
   filtersFetched,
+  filtersFetching,
   filtersFetchingError,
   activeFilterChanged,
-} from "../../actions";
+} from "./filtersSlice";
 import Spinner from "../spinner/Spinner";
 
 // Задача для этого компонента:
